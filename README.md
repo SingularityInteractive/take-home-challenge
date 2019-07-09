@@ -19,7 +19,7 @@ decisions and outcomes.
 - Demonstrating CSS architecture and organization
 - Providing some minimal level of test coverage
 - Providing some build tooling to show optimization paths for production
-
+- FINISH IT
 
 ### Comp
 ![Admin roles interface](take-home-challenge-comp.png)
