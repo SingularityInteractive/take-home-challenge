@@ -1,0 +1,36 @@
+@import '../../../base-styles/base-styles.scss';
+
+.add-role-tools {
+    color: white;
+    height: calc(100vh - 64px);
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 100px;
+    align-items: top;
+    @media screen and (max-width: 850px) {
+        display: block;
+        height: auto;
+    }
+    .add-role-tools-body {
+        padding: 1.5rem;
+        h3 {
+            font-size: $sm-header-font-size;
+        }
+        .overview {
+            p {
+                font-size: $body-font-size;
+                margin: 2rem 0;
+                color: lighten($dark-color,50%);
+            }
+        }
+        .options-list {
+            h3 {
+                margin: 2rem 0 2rem 0;
+            }
+        }
+    }
+    .add-role-tools-footer {
+        padding: 1.5rem;
+        border-top: solid 2px lighten($dark-color,15%);
+    }
+}

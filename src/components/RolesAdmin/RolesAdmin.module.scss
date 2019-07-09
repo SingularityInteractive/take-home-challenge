@@ -1,0 +1,15 @@
+@import '../../base-styles/base-styles.scss';
+
+.roles-admin {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    @media screen and (max-width: 850px) {
+        display: block;
+    }
+    .admin-sidebar {
+        background: $dark-color;
+    }
+    .admin-main {
+        padding: 1rem;
+    }
+}

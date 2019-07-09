@@ -1,0 +1,76 @@
+@import '../../../../base-styles/base-styles.scss';
+
+.option-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 3rem;
+    line-height: 25px;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    font-size: $body-font-size;
+    user-select: none;
+    color: lighten($dark-color,50%);
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+    input:checked ~ span:after {
+        display: block;
+    }
+    input:checked ~ span {
+        background-color: lighten($dark-color,35%);
+    }
+    span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+    border: solid 1px lighten($dark-color,35%);
+    border-radius: 2px;
+    transition: background-color 0.2s linear;
+    &:after {
+        content: "";
+        position: absolute;
+        display: none;
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid $dark-color;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+     }
+    }
+    &:hover input ~ span {
+        background: linear-gradient(-45deg, $mid-color,$mid-color,lighten($mid-color,8%),$mid-color,$mid-color);
+        background-size: 700% 700%;
+        animation-name: animateBg;
+        animation-duration: 0.8s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+    }
+ 
+}
+
+@keyframes animateBg {
+	0% {
+        background-position: 0% 50%;
+        box-shadow: 0px 0px 0px transparent;
+	}
+	20% {
+        background-position: 100% 50%;
+        box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+	}
+	100% {
+        background-position: 0% 50%;
+        box-shadow: 0px 0px 0px transparent;
+	}
+}
