@@ -56,6 +56,7 @@ For functional components, I used arrow function syntax, which I personally pref
 
 The following are things I'd considered doing if time permitted, but were not specifically requested in the requirements:
 
+- Reset all fields after submit
 - Add sorting features to the roles list
 - Style the checkboxes in the roles list
 - Add select-all functionality to the roles list
