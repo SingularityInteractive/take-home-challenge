@@ -1,0 +1,42 @@
+@import '../../../../base-styles/base-styles.scss';
+
+.add-role-button {
+    @include font-style(400);
+    width: 100%;
+    height: 3rem;
+    background: linear-gradient(to top,white,darken($light-color,5%));
+    font-size: $body-font-size;
+    border: solid 2px $light-color;
+    border-radius: 0.2rem;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    outline: 0;
+    &:hover {
+        color: white;
+        background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+        background-size: 400% 400%;
+        animation: animateBg 8s cubic-bezier(0.165, 0.84, 0.44, 1) alternate-reverse infinite;
+    }
+    &[disabled] {
+        background:lighten($dark-color,15%);
+        color: lighten($dark-color,30%);
+        border-color: #666;
+        &:hover {
+            background:lighten($dark-color,17%);
+            color: lighten($dark-color,33%);
+            cursor: default;
+        }
+    }
+}
+
+@keyframes animateBg {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}

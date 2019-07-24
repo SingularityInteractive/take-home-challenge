@@ -1,0 +1,84 @@
+@import '../../../base-styles/base-styles.scss';
+
+.roles-list-container {
+    display: block;
+    width: 100%;
+    padding: 2rem;
+    background: white;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    thead, tbody {
+        display: block;
+    }
+    @media screen and (max-width: 850px) {
+        thead {
+            display: none;
+        }
+    }
+}
+
+.roles-list-row,
+.roles-list-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    justify-items: left;
+    padding: 1rem .5rem;
+    border-bottom: solid 1px #f4f4f4;
+    font-size: $body-font-size;
+    opacity: 0;
+    transform: translateX(2rem);
+    animation-name: loadFromRight;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-duration: 0.4s;
+    @media screen and (max-width: 850px) {
+        grid-template-columns: 1fr;
+        grid-row-gap: 1rem;
+        .role-name .text:before {
+            content: "Role: ";
+        }
+        .user-count,
+        .permissions-list {
+            margin-left: 1.9rem;
+        }
+        .user-count:before {
+            content: "Users: ";
+            @include font-style(700);
+        }
+        .permissions-list:before {
+            content: "Permissions: ";
+            @include font-style(700);
+        }
+    }
+    td {
+        display: block;
+        color: $dark-color;
+    }
+    th {
+        display: block;
+        color: $mid-color;
+    }
+    .role-name {
+        input[type="checkbox"] {
+            margin-right: 1rem;
+        }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include font-style(700);
+        color: $dark-color;
+    }
+}
+
+
+@keyframes loadFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(2rem)
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+

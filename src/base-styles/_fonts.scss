@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap');
+
+$main-font: 'Open Sans', sans-serif;
+
+$body-font-size: 0.9rem;
+$sm-font-size: 0.7rem;
+$sm-header-font-size: 1rem;
+$lg-header-font-size: 1.6rem;
+
+// accepts 400,700
+@mixin font-style($weight) {
+    font-family: $main-font;
+    font-weight: $weight;
+}
+
+
